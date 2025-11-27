@@ -65,7 +65,7 @@
                     </button>
 
                     <a href="{{ route('admin.payments.cash') }}"
-                        class="mt-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+                        class="mt-2  bg-[#79131d]  text-white px-4 py-2 rounded-lg hover:bg-[#5a0f16] transition">
                         عرض الطلاب
                     </a>
                 </div>
