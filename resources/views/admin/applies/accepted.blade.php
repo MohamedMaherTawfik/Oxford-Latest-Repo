@@ -67,4 +67,14 @@
 
 
                 <!-- Email -->
+                <div class="text-gray-700">{{ $apply->user->email }}</div>
+                <!-- Role -->
+                <div class="text-gray-700">{{ $apply->user->role }}</div>
+                <!-- Join Date -->
+                <div class="text-gray-700">{{ $apply->user->created_at->diffForHumans() }}</div>
+                <!-- Status -->
+                <div class="text-right mr-10 text-gray-700">{{ __('main.accepted') }}</div>
+            </div>
+        @endforeach
+    </div>
 </x-panel>
