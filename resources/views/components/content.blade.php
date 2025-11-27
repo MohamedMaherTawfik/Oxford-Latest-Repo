@@ -2,7 +2,7 @@
 use App\Models\User;
 use App\Models\Courses;
 use App\Models\applyTeacher;
-use App\Models\diplomas;
+use App\Models\Diplomas;
 use App\Models\Staff;
 
 $totalUsers = User::where('role', 'user')->count();
