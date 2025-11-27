@@ -92,4 +92,14 @@
                         class="bg-red-500 hover:bg-red-800 text-white rounded-lg px-3 py-2">
                         {{ __('main.reject') }}
                     </button>
+
+
+                    {{-- <button type="button" @click="openMailModal = true"
+                        class="bg-[#79131d] hover:bg-[#5a0f16] text-white rounded-lg px-3 py-2">
+                        {{ __('main.send_email') }}
+                    </button> --}}
+                </div>
+            </div>
+        @endforeach
+    </div>
 </x-panel>
