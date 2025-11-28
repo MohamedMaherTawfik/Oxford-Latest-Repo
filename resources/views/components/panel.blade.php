@@ -38,13 +38,10 @@
 <body class="bg-gray-50">
 
     <!-- Main Layout -->
-    <div class="flex h-screen overflow-hidden">
-
-        <!-- Sidebar -->
+    <div class="flex h-screen">
         <x-sidebar />
 
-        <!-- Main Content -->
-        <div class="flex-1 flex flex-col overflow-hidden" x-data="{ open: false }">
+        <div class="flex-1 flex flex-col" x-data="{ open: false }">
             <!-- Top Navigation -->
             <header class="bg-white shadow-sm">
                 <div class="flex justify-end px-6 py-4">
@@ -105,7 +102,9 @@
                 </div>
             </header>
 
-            {{ $slot }}
+            <main class="flex-1 overflow-y-auto p-6">
+                {{ $slot }}
+            </main>
         </div>
     </div>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>

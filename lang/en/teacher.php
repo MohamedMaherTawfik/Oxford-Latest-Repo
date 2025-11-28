@@ -27,6 +27,7 @@ return [
     'graduation_projects' => 'Graduation Projects',
     'start_live' => 'Start Live',
     'certificates' => 'Certificates',
+    'graduation_project' => 'Graduation Projects',
     'academic_schedule' => 'Academic Schedule',
     'send_notification' => 'Send Notification',
     'message' => 'Message',

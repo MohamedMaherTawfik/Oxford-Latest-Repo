@@ -17,7 +17,7 @@ class CheckAdmin
     {
         if (auth()->check()) {
             $user = auth()->user();
-            if ($user->role === 'admin' || $user->role === 'staff') {
+            if ($user->role == 'admin' || $user->role == 'staff') {
                 return $next($request);
             }
             return redirect()->route('home');

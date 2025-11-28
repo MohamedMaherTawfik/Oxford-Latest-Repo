@@ -473,6 +473,7 @@ return [
 
     'enter_phone' => 'Enter your phone number',
     'city' => 'City',
+    'program_categories' => 'Program Categories',
     'enter_city' => 'Enter your city',
     'country' => 'Country',
     'enter_country' => 'Enter your country',
@@ -485,7 +486,6 @@ return [
     'gate_hero_title' => 'Professional Studies Training Portal',
     'gate_hero_description' => 'We aim to prepare the best leadership and professional competencies, as we strive to develop your skills and enhance your capabilities through specialized training programs.',
     'explore_programs' => 'Explore Programs',
-
     'programs' => 'Programs',
     'instructors' => 'Instructors',
     'success_rate' => 'Success Rate',
@@ -507,5 +507,16 @@ return [
     'professional_fellowship' => 'Professional Fellowship',
     'professional_fellowship_desc' => 'High distinction for experts in their respective fields.',
     'most_enrolled_programs' => 'THE MOST ENROLLED PROGRAMS',
-    'view_all_diplomas' => 'View all Diplomas'
+    'view_all_diplomas' => 'View all Diplomas',
+    'all_diplomas' => 'All Diplomas',
+    'featured_diplomas' => 'Featured Diplomas',
+    'boost_diplomas' => 'Boost your career with our premium diplomas',
+
+    // Search / Filters
+    'search_diplomas' => 'Search Diplomas',
+    'search_placeholder' => 'Search by name...',
+    'categories' => 'Categories',
+    'price_range' => 'Price Range',
+
+    'level' => 'Level',
 ];

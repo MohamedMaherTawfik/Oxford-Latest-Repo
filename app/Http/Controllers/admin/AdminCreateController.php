@@ -128,7 +128,7 @@ class AdminCreateController extends Controller
         $lesson = lesson::create($validated);
 
         return redirect()
-            ->route('teacher.courses.show', $course->slug)
+            ->route('admin.courses.show', $course->slug)
             ->with('success', 'تم انشاء الدرس ');
     }
 

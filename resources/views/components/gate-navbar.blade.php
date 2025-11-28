@@ -1,18 +1,17 @@
 <!-- Top Bar with Marquee -->
-<div class="bg-[#79131d] text-white py-3 px-6 text-sm sticky top-0 w-full z-50 overflow-hidden"
+<div class="bg-[#79131d] text-white py-3 px-6 text-sm sticky top-0 w-full z-50 "
     dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}" x-data="{ langMenuTop: false }">
 
-    <!-- Marquee Wrapper -->
     <div class="flex items-center justify-between">
 
-        <!-- LEFT SIDE (Call + Social) -->
+        <!-- LEFT SIDE -->
         <div class="flex items-center gap-6 ml-20">
             <span>Call: 971563357115</span>
 
             <div class="flex items-center gap-3">
                 <span>Follow us:</span>
 
-                <!-- Facebook -->
+                <!-- Social Icons -->
                 <a href="#" class="hover:text-gray-300">
                     <svg class="w-4 h-4 fill-white" viewBox="0 0 24 24">
                         <path
@@ -20,7 +19,6 @@
                     </svg>
                 </a>
 
-                <!-- Twitter -->
                 <a href="#" class="hover:text-gray-300">
                     <svg class="w-4 h-4 fill-white" viewBox="0 0 24 24">
                         <path
@@ -28,7 +26,6 @@
                     </svg>
                 </a>
 
-                <!-- Instagram -->
                 <a href="#" class="hover:text-gray-300">
                     <svg class="w-4 h-4 fill-white" viewBox="0 0 24 24">
                         <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2
@@ -37,7 +34,6 @@
                     </svg>
                 </a>
 
-                <!-- YouTube -->
                 <a href="#" class="hover:text-gray-300">
                     <svg class="w-4 h-4 fill-white" viewBox="0 0 24 24">
                         <path d="M10 15l5.2-3L10 9v6zm12-3c0-2.5-.2-4.1-.5-5
@@ -50,7 +46,7 @@
             </div>
         </div>
 
-        <!-- RIGHT SIDE (Language + Login/Register) -->
+        <!-- RIGHT SIDE -->
         <div class="flex items-center gap-4 mr-6">
 
             <!-- Language Switch -->
@@ -67,8 +63,9 @@
                     @endif
                 </button>
 
+                <!-- FIXED DROPDOWN (Main Fix is z-[9999]) -->
                 <div x-show="langMenuTop" @click.away="langMenuTop = false"
-                    class="absolute right-0 mt-1 bg-white text-gray-800 w-24 shadow rounded text-sm">
+                    class="absolute right-0 mt-1 bg-white text-gray-800 w-24 shadow rounded text-sm z-[9999]">
 
                     <a href="{{ route('lang.switch', ['locale' => 'en']) }}"
                         class="flex items-center gap-2 px-3 py-2 hover:bg-gray-100">
@@ -98,24 +95,21 @@
 
 
 
-
-<!-- Main Navigation Bar (White) -->
-<nav class="shadow-sm z-40 sticky top-[48px] w-full bg-white text-gray-800"
+<!-- Main Navigation Bar -->
+<nav class="shadow-sm sticky top-[48px] z-40 w-full bg-white text-gray-800"
     dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}" x-data="{ open: false }">
 
     <div class="container mx-auto px-6 py-2 flex items-center justify-between">
 
-        <!-- Left Section: Logo + Profile -->
+        <!-- Logo -->
         <div class="flex items-center gap-4">
             <a href="{{ route('gate.index') }}">
                 <img src="{{ asset('images/logo.png') }}" class="h-14 w-14" alt="LOGO">
             </a>
 
-            <!-- Profile Button -->
             <a href="https://profile.oxford-cis.com/" target="_blank"
                 class="hidden md:flex items-center gap-2 px-3 py-1 bg-[#79131d] text-white rounded-md hover:bg-[#4B0A10] transition font-semibold text-[14px]">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M5.121 17.804A9 9 0 1118.88 6.196 9 9 0 015.12 17.804zM15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
@@ -123,28 +117,28 @@
             </a>
         </div>
 
-        <!-- Center Section: Menu Links -->
+        <!-- Desktop Menu -->
         <div class="hidden md:flex items-center gap-6 font-medium text-lg">
             <a href="{{ route('gate.index') }}"
-                class="hover:text-[#79131d] transition {{ request()->is('/') ? 'text-[#79131d] underline' : '' }}">
+                class="hover:text-[#79131d] {{ request()->is('/') ? 'text-[#79131d] underline' : '' }}">
                 {{ __('messages.home') }}
             </a>
-            <a href="{{ route('gate.categories') }}"
-                class="hover:text-[#79131d] transition {{ request()->is('Courses') || request()->is('courses') ? 'text-[#79131d] underline' : '' }}">
-                {{ __('messages.category') }}
-            </a>
+
             <a href="{{ route('gate.diplomas') }}"
-                class="hover:text-[#79131d] transition {{ request()->is('Courses') || request()->is('courses') ? 'text-[#79131d] underline' : '' }}">
+                class="hover:text-[#79131d] {{ request()->is('diplomas') ? 'text-[#79131d] underline' : '' }}">
                 {{ __('messages.Diplomas') }}
             </a>
+
             <a href="{{ route('about') }}"
-                class="hover:text-[#79131d] transition {{ request()->is('about') ? 'text-[#79131d] underline' : '' }}">
+                class="hover:text-[#79131d] {{ request()->is('about') ? 'text-[#79131d] underline' : '' }}">
                 {{ __('messages.about') }}
             </a>
+
             <a href="{{ route('contact') }}"
-                class="hover:text-[#79131d] transition {{ request()->is('contact') ? 'text-[#79131d] underline' : '' }}">
+                class="hover:text-[#79131d] {{ request()->is('contact') ? 'text-[#79131d] underline' : '' }}">
                 {{ __('messages.contact') }}
             </a>
+
             @auth
                 <a href="{{ route('gate.diplomas.me') }}" class="hover:text-[#79131d]">
                     {{ __('messages.Mydiplomas') }}
@@ -152,7 +146,7 @@
             @endauth
         </div>
 
-        <!-- Mobile Button -->
+        <!-- Mobile Menu Button -->
         <button class="md:hidden ml-4" @click="open = !open">
             <svg x-show="!open" class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
@@ -166,13 +160,16 @@
     <!-- Mobile Menu -->
     <div x-show="open" class="md:hidden bg-white text-gray-800 border-t shadow-inner">
         <div class="flex flex-col px-6 py-3 space-y-2 text-md font-medium">
+
             <a href="{{ route('gate.index') }}" class="hover:text-[#79131d]">{{ __('messages.home') }}</a>
             <a href="{{ route('gate.diplomas') }}" class="hover:text-[#79131d]">{{ __('messages.Diplomas') }}</a>
             <a href="{{ route('about') }}" class="hover:text-[#79131d]">{{ __('messages.about') }}</a>
             <a href="{{ route('contact') }}" class="hover:text-[#79131d]">{{ __('messages.contact') }}</a>
+
             @auth
-                <a href="{{ route('gate.diplomas.me') }}"
-                    class="hover:text-[#79131d]">{{ __('messages.MyCourses') }}</a>
+                <a href="{{ route('gate.diplomas.me') }}" class="hover:text-[#79131d]">
+                    {{ __('messages.MyCourses') }}
+                </a>
             @endauth
 
             <hr>
@@ -190,4 +187,3 @@
     </div>
 </nav>
 <div class="mt-10"></div>
-{{-- <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script> --}}

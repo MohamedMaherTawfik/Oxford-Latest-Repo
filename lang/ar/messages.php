@@ -496,8 +496,18 @@ return [
     'professional_doctorate_desc' => 'بحث وممارسة متقدمة لتعزيز المعرفة والمهارات.',
     'professional_fellowship' => 'الزمالة المهنية',
     'professional_fellowship_desc' => 'تميز عالي للخبراء في مجالاتهم.',
+    'program_categories ' => 'تصنيفات البرامج',
+    'view_all_diplomas' => 'عرض جميع الدبلومات',
+    // Diplomas Page
+    'all_diplomas' => 'جميع الدبلومات',
+    'featured_diplomas' => 'الدبلومات المميزة',
+    'boost_diplomas' => 'طوّر مستقبلك مع دبلوماتنا المميزة',
 
-    'view_all_diplomas' => 'عرض جميع الدبلومات'
+    // Search / Filters
+    'search_diplomas' => 'بحث عن دبلومات',
+    'search_placeholder' => 'ابحث بالاسم...',
+
+    'price_range' => 'نطاق السعر',
 ];
 
 ?>

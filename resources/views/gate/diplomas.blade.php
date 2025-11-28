@@ -17,7 +17,9 @@
                 'price' => (int) $diploma->price,
                 'level' => ucfirst($diploma->level ?? 'Beginner'),
                 'category_name' => $diploma->categorey->name ?? 'General',
-                'cover_photo_url' => $diploma->image ? asset('storage/' . $diploma->image) : '',
+                'cover_photo_url' => $diploma->image
+                    ? asset('storage/' . $diploma->image)
+                    : 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/2560px-Placeholder_view_vector.svg.png',
                 'duration' => $diploma->duration ?? 0,
                 'instructor' => $diploma->user->name ?? '—',
                 'rating' => $diploma->rating ?? 0,
@@ -50,19 +52,19 @@
         body {
             font-family: 'Cairo', sans-serif;
         }
-        
+
         /* RTL Support */
         [dir="rtl"] {
             direction: rtl;
             text-align: right;
         }
-        
+
         [dir="rtl"] .mr-2 {
             margin-right: 0 !important;
             margin-left: 0.5rem !important;
         }
-        
-        [dir="rtl"] .space-x-2 > * + * {
+
+        [dir="rtl"] .space-x-2>*+* {
             margin-left: 0 !important;
             margin-right: 0.5rem !important;
         }
@@ -118,7 +120,9 @@
                         <div class="mb-4">
                             <label class="block text-sm font-medium text-gray-700 mb-2">
                                 {{ __('messages.price_range') }}:
-                                <span x-text="minPrice"></span> – <span x-text="maxPrice"></span> <img src="https://www.sama.gov.sa/ar-sa/Currency/Documents/Saudi_Riyal_Symbol-2.svg" alt="SAR" class="inline-block sar-symbol">
+                                <span x-text="minPrice"></span> – <span x-text="maxPrice"></span> <img
+                                    src="https://www.sama.gov.sa/ar-sa/Currency/Documents/Saudi_Riyal_Symbol-2.svg"
+                                    alt="SAR" class="inline-block sar-symbol" style="width: 20px; height: 20px;">
                             </label>
                             <div class="flex items-center gap-2 mb-1">
                                 <input type="range" min="0" :max="globalMaxPrice" x-model="minPrice"
@@ -182,8 +186,13 @@
 
                                     <!-- Price + Link -->
                                     <div class="pt-4 flex justify-between items-center">
-                                        <span class="text-lg font-bold text-[#79131d]"
-                                            x-text="diploma.price"></span> <img src="https://www.sama.gov.sa/ar-sa/Currency/Documents/Saudi_Riyal_Symbol-2.svg" alt="SAR" class="inline-block sar-symbol">
+                                        <span class="flex items-center gap-0">
+                                            <span class="text-lg font-bold text-[#79131d]"
+                                                x-text="diploma.price"></span>
+                                            <img src="https://www.sama.gov.sa/ar-sa/Currency/Documents/Saudi_Riyal_Symbol-2.svg"
+                                                alt="SAR" style="width: 20px; height: 20px; margin-left: 2px;">
+                                        </span>
+
 
                                         <!-- 🔥 الرابط حسب المالك -->
                                         <a :href="window.authId === diploma.user_id ? diploma.owner_url : diploma.guest_url"
@@ -239,7 +248,7 @@
                 get filteredDiplomas() {
                     return this.diplomas.filter(d => {
                         if (this.search && !d.title.toLowerCase().includes(this.search.toLowerCase()))
-                        return false;
+                            return false;
                         if (this.selectedCategories.length > 0 && !this.selectedCategories.includes(d
                                 .category_name)) return false;
                         if (d.price < this.minPrice || d.price > this.maxPrice) return false;
