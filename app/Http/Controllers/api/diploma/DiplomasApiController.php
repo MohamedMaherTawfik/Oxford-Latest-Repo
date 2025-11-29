@@ -107,6 +107,7 @@ class DiplomasApiController extends Controller
                 $fields['image'] = request()->file('image')->store('diplomasImage', 'public');
             }
             $fields['slug'] = Str::slug(request('title')) . '-' . uniqid() . '-' . time();
+            $fields['user_id'] = Auth::guard('api')->user()->id;
             $course = Diplomas::create($fields);
             return $this->success($course, 'Course created Successfully');
         } catch (\Throwable $th) {
