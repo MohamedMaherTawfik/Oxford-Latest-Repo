@@ -14,7 +14,7 @@ class lessonDiplomaController extends Controller
     use ApiResponse;
     public function allLessons()
     {
-        $lessons = Diplomas::with('lessons')->get();
+        $lessons = Diplomas::with('lessons')->where('id', request('id'))->get();
         try {
             if (count($lessons) == 0) {
                 return $this->noContent();
