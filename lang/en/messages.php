@@ -19,7 +19,7 @@ return [
     'learn_more' => 'Learn More About Us',
     'pay_cash' => 'Pay later',
     'about_instructor' => 'About Instructor',
-    'certified_experts' => 'Certified Experts',
+    'certified_expert' => 'Certified Experts',
     'total_students' => 'Total Students',
     'our_story_title' => 'Our Story',
     'our_story_p1' => 'Welcome to our College! We are a community of passionate educators and innovators dedicated to making learning more accessible, engaging, and effective for students everywhere.',
