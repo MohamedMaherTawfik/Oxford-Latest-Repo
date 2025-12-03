@@ -17,7 +17,10 @@ return [
     'hero_title' => 'About Oxford College',
     'hero_subtitle' => 'We are a team of passionate innovators dedicated to creating cutting-edge technology solutions that transform businesses.',
     'learn_more' => 'Learn More About Us',
-
+    'pay_cash' => 'Pay later',
+    'about_instructor' => 'About Instructor',
+    'certified_experts' => 'Certified Experts',
+    'total_students' => 'Total Students',
     'our_story_title' => 'Our Story',
     'our_story_p1' => 'Welcome to our College! We are a community of passionate educators and innovators dedicated to making learning more accessible, engaging, and effective for students everywhere.',
     'our_story_p2' => 'Today, our College hosts 50+ expert instructors in various fields, offering high-quality courses, interactive lessons, and personalized learning experiences. Over 2000 learners worldwide have already advanced their skills with us.',
