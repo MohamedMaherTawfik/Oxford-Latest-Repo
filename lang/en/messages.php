@@ -210,7 +210,7 @@ return [
     'login_left_text3' => 'Learn, grow, and succeed—all in one place.',
     'login_left_text4' => 'Sign in and get started.',
     'register_title' => 'Create New Account',
-    'username' => 'Username',
+    'username' => 'USERNAME',
     'register_as' => 'Register As',
     'select_role' => 'Select Role',
     'upload_photo' => 'Upload Photo',
